@@ -5,7 +5,13 @@
   <title>images demo page</title>
 
   <style>
-    body {}
+    body {
+      background-color:#e6d094;
+      background-image: radial-gradient(circle at 20.05% 17.47%, #FF512F, transparent 100%),radial-gradient(circle at 97.98% 71.06%, #F09819, transparent 100%),radial-gradient(circle at 50.65% 50.72%, #757eff, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
 
     /* img and figure tags will affect all of those elements in the document */
     img {}
@@ -13,12 +19,28 @@
     figure {}
 
     /* the following rules apply to specific elements */
-    #one {}
+    #one {
+      border: 15px solid rgb(202, 80, 176);
+      border-radius: 37% 63% 70% 30% / 30% 30% 70% 70%;
+      box-shadow: 0px 0px 40px magenta;
+    }
 
-    #two {}
+    #two {opacity: .5;}
 
-    #three {}
-    
+    #three {
+      width: 100%;
+      height: 100%;
+      height: calc(100vh - 4em);
+      margin: 1em;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      will-change: filter;
+      /* optimize filter changes */
+      background-image: url(images/mood.jpg);
+      filter: sepia(100%) brightness(66%);
+}
+    }
   </style>
 </head>
 
@@ -34,8 +56,9 @@
   <img src="images/mood.jpg" alt="girl with silly face" id="one">
 
   <!-- image inside a box with an id -->
-  <div class="two">
-    <img src="images/mood.jpg">
+  <div id="two">
+    <img src="images/mood.jpg"
+      alt="girl with silly face to show the mood of how crazy this week has been">
   </div>
 
   <!-- box with content. we will load image through css -->
@@ -48,7 +71,6 @@
     <img src="images/mood.jpg" alt="girl with silly face">
     <figcaption>mood for web design stuff</figcaption>
   </figure>
-
 
 </body>
 
